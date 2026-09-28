@@ -1,5 +1,5 @@
-import { Link, useRouterState } from "@tanstack/react-router";
-import { Search, MapPin, User, Menu, X, Home, Compass, Ticket, Bookmark } from "lucide-react";
+import { Link, useRouter, useRouterState } from "@tanstack/react-router";
+import { Search, MapPin, User, Menu, X, Home, Compass, Ticket, Bookmark, ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +13,7 @@ const nav = [
 ] as const;
 
 export function Header() {
+  const router = useRouter();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const onHero = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
@@ -39,6 +40,15 @@ export function Header() {
         )}
       >
         <div className="mx-auto flex h-full max-w-[1480px] items-center gap-6 px-5 md:px-8">
+          {!onHero && (
+            <button
+              aria-label="Go back"
+              onClick={() => router.history.back()}
+              className="-ml-2 grid h-10 w-10 shrink-0 place-items-center opacity-85 transition-opacity hover:opacity-100"
+            >
+              <ArrowLeft className="h-5 w-5" />
+            </button>
+          )}
           <Link to="/" className="font-display text-xl tracking-wide md:text-2xl">
             SAC <span className="text-primary">COMMUNITY</span>
           </Link>
