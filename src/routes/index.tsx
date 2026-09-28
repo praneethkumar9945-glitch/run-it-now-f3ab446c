@@ -5,8 +5,6 @@ import { Hero } from "@/components/site/Hero";
 import { useScrollMotion } from "@/components/site/motion";
 import { categories, events, live, stories, people, cities, whatsNext, news, upcoming, formatPrice } from "@/lib/data";
 import indiaMap from "@/assets/india-map.jpg";
-import secSports from "@/assets/sec-sports.jpg";
-import secArts from "@/assets/sec-arts.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -334,70 +332,6 @@ function Home() {
             <div data-reveal className="mt-6 bg-muted p-5">
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Announcement</p>
               <p className="mt-2 text-sm font-semibold">Hyderabad Esports Open registrations close 30 Oct. Open qualifiers begin online this weekend.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SPORTS */}
-      <section className="relative overflow-hidden bg-ink text-ink-foreground">
-        <div className="relative h-[70vh] min-h-[480px] overflow-hidden md:h-[88vh]">
-          <img src={secSports} alt="Wrestlers in a traditional mud akhada" width={1600} height={896} loading="lazy" data-zoom className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
-          <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1480px] px-5 pb-12 md:px-8 md:pb-20">
-            <Eyebrow dark>Championships · Leagues · Trials</Eyebrow>
-            <Lines text={["Every game.", "Every ground."]} className="text-[14vw] md:text-[8vw] xl:text-[128px]" />
-          </div>
-        </div>
-        <div className="mx-auto grid max-w-[1480px] gap-10 px-5 py-16 md:grid-cols-[1fr_1.4fr] md:px-8 md:py-24">
-          <div data-reveal>
-            <p className="max-w-sm text-ink-muted">From akhadas to astro-turf. Follow fixtures, results and registrations for competitions at every level — school, state and national.</p>
-            <Link to="/sports" className="mt-8 inline-flex items-center gap-3 bg-primary px-6 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-primary-foreground">
-              Explore sports <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div data-reveal className="border-t border-ink-border">
-            <p className="py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-gold">Fixtures & results</p>
-            {[
-              ["Football", "Mohun Bagan", "2 – 1", "East Bengal", "FT"],
-              ["Kabaddi", "Puneri Paltan", "38 – 34", "Bengal Warriors", "FT"],
-              ["Hockey", "Odisha", "vs", "Punjab", "Sat 6PM"],
-              ["Cricket", "Karnataka", "vs", "Mumbai", "Sun 9AM"],
-            ].map(([sport, a, s, b, st]) => (
-              <div key={a} className="grid grid-cols-[80px_1fr_auto_1fr_60px] items-center gap-3 border-b border-ink-border py-4 text-sm md:grid-cols-[110px_1fr_auto_1fr_80px]">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-ink-muted">{sport}</span>
-                <span className="text-right font-semibold">{a}</span>
-                <span className="font-display text-xl text-primary">{s}</span>
-                <span className="font-semibold">{b}</span>
-                <span className="text-right text-[11px] text-ink-muted">{st}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ARTS & CULTURE */}
-      <section className="mx-auto max-w-[1480px] px-5 py-24 md:px-8 md:py-36">
-        <div className="grid items-center gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <Eyebrow>Arts & culture</Eyebrow>
-            <Lines text={["Made by hand.", "Felt by", "heart."]} className="text-[15vw] md:text-[7vw] xl:text-[110px]" />
-            <p data-reveal className="mt-6 max-w-sm text-muted-foreground">Performances, exhibitions, workshops and the artists keeping India's crafts alive. Sit in, sign up, make something.</p>
-            <ul data-reveal className="mt-8 flex flex-wrap gap-2">
-              {["Performances", "Festivals", "Exhibitions", "Cultural events", "Artists", "Workshops"].map((t) => (
-                <li key={t} className="border px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em]">{t}</li>
-              ))}
-            </ul>
-            <Link to="/arts" className="mt-8 inline-flex items-center gap-2 border-b-2 border-primary pb-1 text-[12px] font-bold uppercase tracking-[0.16em]">Explore arts <ArrowRight className="h-4 w-4" /></Link>
-          </div>
-          <div className="relative md:col-span-7">
-            <div className="relative ml-auto aspect-[4/5] w-[88%] overflow-hidden bg-muted">
-              <img src={secArts} alt="Potter shaping clay on a wheel" width={1024} height={1280} loading="lazy" data-parallax="8" className="absolute inset-[-10%_0] h-[120%] w-full object-cover" />
-            </div>
-            <div data-reveal className="absolute bottom-10 left-0 max-w-[260px] bg-background p-6 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.35)]">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Workshop · Khurja</p>
-              <p className="mt-2 font-display text-2xl">Clay & Wheel Weekend</p>
-              <p className="mt-1 text-sm text-muted-foreground">Sat–Sun · From ₹650</p>
             </div>
           </div>
         </div>
