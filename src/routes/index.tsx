@@ -249,7 +249,7 @@ function Home() {
           <div className="mt-10 overflow-x-auto pb-20 no-scrollbar lg:overflow-hidden lg:pb-0">
             <div data-htrack className="flex w-max snap-x snap-mandatory gap-5 px-5 md:px-8 lg:pl-[max(2rem,calc((100vw-1480px)/2+2rem))] lg:pr-[20vw]">
               {live.map(({ label, event, meta }) => (
-                <Link key={label} to="/event/$slug" params={{ slug: event.slug }} className="group relative block w-[78vw] shrink-0 snap-start overflow-hidden sm:w-[46vw] lg:w-[30vw]">
+                <Link key={label} to="/event/$slug" params={{ slug: event.slug }} className="group relative block w-[55vw] shrink-0 snap-start overflow-hidden sm:w-[32vw] lg:w-[21vw]">
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img src={event.img} alt={event.name} width={event.w} height={event.h} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
@@ -257,17 +257,17 @@ function Home() {
                       {label === "LIVE" && <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-foreground" />}
                       {label}
                     </span>
-                    <div className="absolute inset-x-0 bottom-0 p-5">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold">{event.category} · {meta}</p>
-                      <p className="mt-2 font-display text-3xl">{event.name}</p>
-                      <p className="mt-1 text-sm text-ink-muted">{event.venue}, {event.city}</p>
+                    <div className="absolute inset-x-0 bottom-0 p-3.5">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-gold">{event.category} · {meta}</p>
+                      <p className="mt-1.5 font-display text-xl leading-tight">{event.name}</p>
+                      <p className="mt-1 text-xs text-ink-muted">{event.venue}, {event.city}</p>
                     </div>
                   </div>
                 </Link>
               ))}
-              <Link to="/events" className="flex w-[78vw] shrink-0 snap-start flex-col justify-end border border-ink-border p-6 sm:w-[46vw] lg:w-[30vw]">
-                <p className="font-display text-4xl">See everything on today</p>
-                <ArrowRight className="mt-4 h-8 w-8 text-primary" />
+              <Link to="/events" className="flex w-[55vw] shrink-0 snap-start flex-col justify-end border border-ink-border p-4 sm:w-[32vw] lg:w-[21vw]">
+                <p className="font-display text-2xl">See everything on today</p>
+                <ArrowRight className="mt-3 h-6 w-6 text-primary" />
               </Link>
             </div>
           </div>
