@@ -5,8 +5,6 @@ import { Hero } from "@/components/site/Hero";
 import { useScrollMotion } from "@/components/site/motion";
 import { categories, events, live, stories, people, cities, whatsNext, news, upcoming, formatPrice } from "@/lib/data";
 import indiaMap from "@/assets/india-map.jpg";
-import secSports from "@/assets/sec-sports.jpg";
-import secArts from "@/assets/sec-arts.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
