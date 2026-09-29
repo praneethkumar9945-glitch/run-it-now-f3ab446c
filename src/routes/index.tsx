@@ -161,7 +161,7 @@ function Home() {
             Every scene in the country, organised in one place. Pick a world and see what's on this week — in your city or across India.
           </p>
         </div>
-        <div className="mx-auto grid max-w-[640px] grid-cols-2 gap-2 md:grid-cols-12 md:gap-2.5">
+        <div className="mx-auto grid max-w-[320px] grid-cols-2 gap-1.5 md:grid-cols-12 md:max-w-[720px] md:gap-2">
           {categories.map((c, i) => {
             const layout = [
               "col-span-2 md:col-span-5 md:row-span-2 aspect-[4/5]",
@@ -175,13 +175,13 @@ function Home() {
               <Link key={c.name} to="/events" search={{ category: c.name }} data-reveal className={`group relative overflow-hidden bg-ink ${layout}`}>
                 <img src={c.img} alt={c.name} width={c.w} height={c.h} loading="lazy" data-zoom className="absolute inset-0 h-full w-full object-cover transition-[filter] duration-700 group-hover:brightness-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-2.5 text-ink-foreground md:p-3">
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-1.5 text-ink-foreground md:p-2">
                   <div>
-                    <p className="text-[7px] font-bold uppercase tracking-[0.2em] text-gold">{c.count} events</p>
-                    <p className="font-display text-base md:text-lg">{c.name}</p>
-                    <p className="mt-0.5 hidden text-[10px] text-ink-muted md:block">{c.blurb}</p>
+                    <p className="text-[6px] font-bold uppercase tracking-[0.18em] text-gold">{c.count} events</p>
+                    <p className="font-display text-xs md:text-sm">{c.name}</p>
+                    <p className="mt-0.5 hidden text-[8px] text-ink-muted md:block">{c.blurb}</p>
                   </div>
-                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary" />
+                  <ArrowUpRight className="h-2.5 w-2.5 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary" />
                 </div>
               </Link>
             );
